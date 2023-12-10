@@ -1,20 +1,29 @@
 {
-  "name": "mkush.dev",
-  "type": "module",
-  "version": "0.0.1",
-  "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro check && astro build",
-    "preview": "astro preview",
-    "astro": "astro"
-  },
-  "dependencies": {
-    "@astrojs/check": "^0.3.1",
-    "astro": "^4.0.3",
-    "typescript": "^5.3.3"
-  },
-  "devDependencies": {
-    "prettier": "^3.1.0"
-  }
+    "name": "mkush.dev",
+    "type": "module",
+    "version": "0.0.1",
+    "scripts": {
+        "dev": "astro dev",
+        "start": "astro dev",
+        "build": "astro check && astro build",
+        "preview": "astro preview",
+        "astro": "astro",
+        "format:check": "prettier --check . --plugin=prettier-plugin-astro",
+        "format": "prettier --write . --plugin=prettier-plugin-astro",
+        "lint": "eslint .",
+        "ts-check": "tsc"
+    },
+    "dependencies": {
+        "@astrojs/check": "^0.3.1",
+        "astro": "^4.0.3",
+        "typescript": "^5.3.3"
+    },
+    "devDependencies": {
+        "@typescript-eslint/eslint-plugin": "^6.13.2",
+        "@typescript-eslint/parser": "^6.13.2",
+        "eslint": "^8.55.0",
+        "eslint-config-prettier": "^9.1.0",
+        "prettier": "^3.1.0",
+        "prettier-plugin-astro": "^0.12.2"
+    }
 }

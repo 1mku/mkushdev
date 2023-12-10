@@ -1,0 +1,11 @@
+# Ignore everything
+/*
+
+# Except these files & folders
+!/src
+!/.github
+!tsconfig.json
+!.eslintrc.cjs
+!.eslintignore
+!package.json
+!.prettierrc
