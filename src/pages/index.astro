@@ -1,10 +1,10 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
 
 const title = "Hello, I'm Mike!";
 ---
 
-<Layout title={title}>
+<BaseLayout title={title}>
     <main>
         <div class="intro">{title}</div>
         <div class="tagline">
@@ -32,6 +32,6 @@ const title = "Hello, I'm Mike!";
             </a>
         </div>
     </main>
-</Layout>
+</BaseLayout>
 
 <style></style>
