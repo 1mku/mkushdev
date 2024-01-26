@@ -1,0 +1,36 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PostCard from '../../components/PostCard.astro';
+
+const title = 'Portfolio';
+const projects = await getCollection('projects');
+---
+
+<BaseLayout title={title}>
+    <main class="root">
+        <div class="content">
+            <div class="grid">
+                {
+                    projects.map((p) => (
+                        <PostCard
+                            title={p.data.title}
+                            href={`/projects/${p.slug}`}
+                        />
+                    ))
+                }
+            </div>
+        </div>
+    </main>
+</BaseLayout>
+
+<style>
+    .content {
+        max-width: 960px;
+        width: 100%;
+        margin: 0 auto;
+    }
+    .grid {
+        display: grid;
+    }
+</style>
