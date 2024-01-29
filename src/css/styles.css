@@ -28,10 +28,6 @@ html {
     }
 }
 
-.icons-social i {
-    font-size: 3em;
-}
-
 /* Custom Styles */
 
 main {
@@ -44,8 +40,8 @@ main {
 }
 
 main > .intro {
-    font-family: 'Reem Kufi', sans-serif;
-    font-size: 3.75em;
+    font-family: 'Silkscreen', sans-serif;
+    font-size: 3rem;
     font-weight: 600;
 }
 
@@ -56,20 +52,10 @@ main > .tagline {
 }
 
 .icons-social i {
+    font-size: 3em;
     padding: 10px;
 }
 
 .icons-social a {
     text-decoration: none;
-}
-
-.devto {
-    margin-bottom: -0.2rem;
-}
-
-.devto svg {
-    margin-bottom: -0.2rem;
-    margin-left: 0.675rem;
-    width: 2.65rem;
-    height: 2.65rem;
 }
