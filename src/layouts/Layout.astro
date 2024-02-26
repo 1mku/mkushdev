@@ -50,16 +50,45 @@ const { title } = Astro.props;
         <GA />
     </head>
     <body>
-        <slot />
+        <main>
+            <slot />
+        </main>
         <style is:global>
             :root {
-                --bg-color: #ffeb3b;
-                --text-primary: #1e1e1e;
+                /* --bg-color: #ffeb3b; */
+                --text-primary: #fff;
+                --geist-foreground: #fff;
+                --background: #000;
+                --accents-8: #fafafa;
+                --accents-7: #eaeaea;
+                --accents-6: #999;
+                --accents-5: #888;
+                --accents-4: #666;
+                --accents-3: #444;
+                --accents-2: #333;
+                --accents-1: #111;
+            }
+
+            body {
+                background: linear-gradient(
+                    180deg,
+                    var(--background) 30%,
+                    var(--accents-1) 50%,
+                    var(--accents-1) 100%
+                );
+                /* background: var(--bg-color); */
+                color: var(--text-primary);
             }
 
             main {
-                background: var(--bg-color);
-                color: var(--text-primary);
+                margin: 0 auto;
+                display: flex;
+                flex-direction: column;
+                min-height: 100vh;
+                justify-content: center;
+                max-width: 800px;
+                padding: 0 2rem;
+                text-align: center;
             }
 
             .icons-social a {

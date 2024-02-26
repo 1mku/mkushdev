@@ -1,22 +1,22 @@
 ---
+import Card from '../components/Card.astro';
 import Layout from '../layouts/Layout.astro';
 
 const title = "Hello, I'm Mike!";
 ---
 
 <Layout title={title}>
-    <main>
+    <Card>
         <div class="intro">Hello, I'm&nbsp;Mike!</div>
-        <div class="tagline">
-            Full-Stack Dev | Code Fanatic | Mac Hacker | 💻
-        </div>
+        <div class="tagline">Full-Stack Developer</div>
+        <div class="emoji">💻</div>
         <div class="icons-social">
             <a target="_blank" href="https://github.com/1mku">
                 <i class="fa-brands fa-github" aria-hidden="true" title="Github"
                 ></i>
                 <span class="sr-only">Github</span>
             </a>
-            <a target="_blank" href="https://twitter.com/mkushchov">
+            <a target="_blank" href="https://twitter.com/_1mku_">
                 <i
                     class="fa-brands fa-twitter"
                     aria-hidden="true"
@@ -31,7 +31,32 @@ const title = "Hello, I'm Mike!";
                 <span class="sr-only">LinkedIn</span>
             </a>
         </div>
-    </main>
+    </Card>
 </Layout>
 
-<style></style>
+<style>
+    .intro {
+        font-family: 'Silkscreen', sans-serif;
+        font-size: 3rem;
+        font-weight: 600;
+    }
+
+    .tagline {
+        font-size: 1.5rem;
+        margin: 1.5rem 0;
+        font-weight: 100;
+    }
+
+    .emoji {
+        font-size: 2rem;
+    }
+
+    .icons-social i {
+        font-size: 2rem;
+        padding: 10px;
+    }
+
+    .icons-social a {
+        text-decoration: none;
+    }
+</style>
