@@ -4,8 +4,9 @@ const GTM_ID = import.meta.env.GTM_ID ?? 'GTM-XXXX';
 
 <script
     type="text/partytown"
-    src=`https://www.googletagmanager.com/gtag/js?id=${GTM_ID}`></script>
-<script type="text/partytown">
+    src=`https://www.googletagmanager.com/gtag/js?id=${GTM_ID}`
+    is:inline></script>
+<script type="text/partytown" is:inline>
     window.dataLayer = window.dataLayer || [];
     function gtag() {
         dataLayer.push(arguments);

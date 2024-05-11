@@ -14,20 +14,23 @@
         "ts-check": "tsc"
     },
     "dependencies": {
-        "@astrojs/check": "^0.5.4",
-        "@astrojs/partytown": "^2.0.4",
+        "@astrojs/check": "^0.6.0",
+        "@astrojs/partytown": "^2.1.0",
         "@astrojs/tailwind": "^5.1.0",
-        "astro": "^4.4.0",
-        "tailwindcss": "^3.4.1",
-        "typescript": "^5.3.3"
+        "astro": "^4.8.2",
+        "tailwindcss": "^3.4.3",
+        "typescript": "^5.4.5"
     },
     "devDependencies": {
-        "@types/node": "^20.11.19",
-        "@typescript-eslint/eslint-plugin": "^7.0.1",
-        "@typescript-eslint/parser": "^7.0.1",
-        "eslint": "^8.56.0",
+        "@types/node": "^20.12.11",
+        "@typescript-eslint/eslint-plugin": "^7.8.0",
+        "@typescript-eslint/parser": "^7.8.0",
+        "autoprefixer": "^10.4.19",
+        "eslint": "^9.2.0",
         "eslint-config-prettier": "^9.1.0",
+        "postcss": "^8.4.38",
         "prettier": "^3.2.5",
         "prettier-plugin-astro": "^0.13.0"
-    }
+    },
+    "packageManager": "pnpm@9.0.5+sha256.61bd66913b52012107ec25a6ee4d6a161021ab99e04f6acee3aa50d0e34b4af9"
 }
