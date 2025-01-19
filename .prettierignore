@@ -3,6 +3,7 @@
 
 # Except these files & folders
 !/src
+!/studio
 !/.github
 !tsconfig.json
 !.eslintrc.cjs

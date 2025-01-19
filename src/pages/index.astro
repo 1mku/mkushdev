@@ -2,16 +2,17 @@
 import Card from '../components/Card.astro';
 import Skills from '../components/Skills.astro';
 import Marquees from '../components/Marquees.astro';
-import Layout from '../layouts/Layout.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
 
 const title = "Hello, I'm Mike!";
 ---
 
-<Layout title={title}>
+<BaseLayout title={title}>
     <Card>
         <div class="intro">Hello, I'm&nbsp;Mike!</div>
         <div class="tagline">Full-Stack Developer</div>
         <div class="emoji">💻</div>
+
         <div class="icons-social">
             <a target="_blank" href="https://github.com/1mku">
                 <i class="fa-brands fa-github" aria-hidden="true" title="Github"
@@ -37,7 +38,7 @@ const title = "Hello, I'm Mike!";
     <Marquees>
         <Skills />
     </Marquees>
-</Layout>
+</BaseLayout>
 
 <style>
     .intro {
