@@ -1,0 +1,9 @@
+<script>
+    import posthog from 'posthog-js';
+    if (import.meta.env.PROD) {
+        posthog.init('phc_dGluPpkr5dSplv8C74Qxpwx6wYyzeuDi5jGv4HWeVAo', {
+            api_host: 'https://eu.i.posthog.com',
+            person_profiles: 'always', // or 'always' to create profiles for anonymous users as well
+        });
+    }
+</script>
