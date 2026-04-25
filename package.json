@@ -20,8 +20,6 @@
         "astro": "^6.1.9",
         "astro-portabletext": "^0.13.0",
         "posthog-js": "^1.372.1",
-        "react": "^19.2.5",
-        "react-dom": "^19.2.5",
         "tailwindcss": "^4.2.4"
     },
     "devDependencies": {
@@ -35,7 +33,7 @@
         "postcss": "^8.5.10",
         "prettier": "^3.8.3",
         "prettier-plugin-astro": "^0.14.1",
-        "typescript": "^6.0.3",
+        "typescript": "^5.7.3",
         "vite": "^7.3.2"
     },
     "packageManager": "pnpm@9.0.5+sha256.61bd66913b52012107ec25a6ee4d6a161021ab99e04f6acee3aa50d0e34b4af9"
