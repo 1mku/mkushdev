@@ -1,7 +1,10 @@
 ---
-import Posthog from '../components/Posthog.astro';
-import '../css/reset.css';
-import '../css/styles.css';
+import Posthog from '@/components/Posthog.astro';
+import GA from '@/components/GA.astro';
+
+import '@/styles/reset.css';
+import '@/styles/styles.css';
+import '@/styles/global.css';
 
 interface Props {
     title: string;
@@ -16,37 +19,40 @@ const { title } = Astro.props;
         <meta charset="UTF-8" />
         <meta name="description" content="Mike Kushchov - Personal website." />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="icon" type="image/svg+xml" href="favicon/favicon.ico" />
+        <link rel="icon" type="image/svg+xml" href="/favicon/favicon.ico" />
         <title>Mike Kushchov - {title}</title>
-        <link rel="icon" href="favicon/favicon.ico" type="image/png" />
+        <link rel="icon" href="/favicon/favicon.ico" type="image/png" />
         <link
             rel="apple-touch-icon"
             sizes="180x180"
-            href="favicon/apple-touch-icon.png"
+            href="/favicon/apple-touch-icon.png"
         />
         <link
             rel="icon"
             type="image/png"
             sizes="32x32"
-            href="favicon/favicon-32x32.png"
+            href="/favicon/favicon-32x32.png"
         />
         <link
             rel="icon"
             type="image/png"
             sizes="16x16"
-            href="favicon/favicon-16x16.png"
+            href="/favicon/favicon-16x16.png"
         />
-        <link rel="stylesheet" href="fa/fontawesome.min.css" />
-        <link rel="stylesheet" href="fa/brands.min.css" />
-        <link rel="manifest" href="favicon/site.webmanifest" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            rel="preconnect"
-            href="https://fonts.googleapis.com/css2?family=Roboto&family=Silkscreen&display=swap"
-        />
+        <link rel="stylesheet" href="/fa/fontawesome.min.css" />
+        <link rel="stylesheet" href="/fa/brands.min.css" />
+        <link rel="manifest" href="/favicon/site.webmanifest" />
+    
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400&display=swap" rel="stylesheet">
+        <!-- End Fonts -->
+        
+        <!-- Analytics -->
         <Posthog />
+        <GA />
+        <!-- End Analytics -->
     </head>
     <body>
         <main>
