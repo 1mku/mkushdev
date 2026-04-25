@@ -1,5 +1,5 @@
 {
-    "name": "mkush.dev",
+    "name": "1mku.dev",
     "type": "module",
     "version": "0.0.1",
     "scripts": {
@@ -14,24 +14,29 @@
         "ts-check": "tsc"
     },
     "dependencies": {
-        "@astrojs/check": "^0.6.0",
-        "@astrojs/partytown": "^2.1.0",
-        "@astrojs/tailwind": "^5.1.0",
-        "astro": "^4.8.2",
-        "posthog-js": "^1.217.2",
-        "tailwindcss": "^3.4.3",
-        "typescript": "^5.4.5"
+        "@astrojs/check": "^0.9.8",
+        "@astrojs/partytown": "^2.1.7",
+        "@tailwindcss/vite": "^4.2.4",
+        "astro": "^6.1.9",
+        "astro-portabletext": "^0.13.0",
+        "posthog-js": "^1.372.1",
+        "react": "^19.2.5",
+        "react-dom": "^19.2.5",
+        "tailwindcss": "^4.2.4"
     },
     "devDependencies": {
-        "@types/node": "^20.12.11",
-        "@typescript-eslint/eslint-plugin": "^7.8.0",
-        "@typescript-eslint/parser": "^7.8.0",
-        "autoprefixer": "^10.4.19",
-        "eslint": "^9.2.0",
-        "eslint-config-prettier": "^9.1.0",
-        "postcss": "^8.4.38",
-        "prettier": "^3.2.5",
-        "prettier-plugin-astro": "^0.13.0"
+        "@tailwindcss/postcss": "^4.2.4",
+        "@types/node": "^25.6.0",
+        "@typescript-eslint/eslint-plugin": "^8.59.0",
+        "@typescript-eslint/parser": "^8.59.0",
+        "autoprefixer": "^10.5.0",
+        "eslint": "^10.2.1",
+        "eslint-config-prettier": "^10.1.8",
+        "postcss": "^8.5.10",
+        "prettier": "^3.8.3",
+        "prettier-plugin-astro": "^0.14.1",
+        "typescript": "^6.0.3",
+        "vite": "^7.3.2"
     },
     "packageManager": "pnpm@9.0.5+sha256.61bd66913b52012107ec25a6ee4d6a161021ab99e04f6acee3aa50d0e34b4af9"
 }
