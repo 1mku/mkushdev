@@ -11,29 +11,33 @@
         "format:check": "prettier --check . --plugin=prettier-plugin-astro",
         "format": "prettier --write . --plugin=prettier-plugin-astro",
         "lint": "eslint .",
-        "ts-check": "tsc"
+        "tsc": "tsc --noEmit"
     },
     "dependencies": {
         "@astrojs/check": "0.9.9",
         "@astrojs/partytown": "2.1.7",
-        "@tailwindcss/vite": "4.3.0",
-        "astro": "6.3.3",
+        "@tailwindcss/vite": "4.3.2",
+        "astro": "7.0.7",
         "astro-portabletext": "0.13.0",
-        "posthog-js": "1.373.5",
-        "tailwindcss": "4.3.0"
+        "posthog-js": "1.399.2",
+        "tailwindcss": "4.3.2"
     },
     "devDependencies": {
-        "@tailwindcss/postcss": "4.3.0",
-        "@types/node": "25.8.0",
-        "@typescript-eslint/eslint-plugin": "8.59.3",
-        "@typescript-eslint/parser": "8.59.3",
-        "autoprefixer": "10.5.0",
-        "eslint": "10.4.0",
+        "@eslint/js": "^10.0.1",
+        "@tailwindcss/postcss": "4.3.2",
+        "@types/node": "26.1.1",
+        "@typescript-eslint/eslint-plugin": "8.63.0",
+        "@typescript-eslint/parser": "8.63.0",
+        "astro-eslint-parser": "3.0.0",
+        "autoprefixer": "10.5.2",
+        "eslint": "10.7.0",
         "eslint-config-prettier": "10.1.8",
-        "postcss": "8.5.14",
-        "prettier": "3.8.3",
+        "eslint-plugin-astro": "3.0.0",
+        "globals": "^17.7.0",
+        "postcss": "8.5.17",
+        "prettier": "3.9.5",
         "prettier-plugin-astro": "0.14.1",
         "typescript": "6.0.3",
-        "vite": "7.3.3"
+        "typescript-eslint": "^8.63.0"
     }
 }
