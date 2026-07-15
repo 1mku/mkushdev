@@ -4,7 +4,7 @@
 
 **1mku.dev / mkush.dev** — Personal portfolio & link-in-bio site for **Mike Kushchov** (Full-Stack Developer).
 
-Built with [Astro](https://astro.build) v6 (static site generator), styled with Tailwind CSS v4 + hand-rolled CSS, deployed as a fully static site via Cloudflare Pages (inferred from CSP config).
+Built with [Astro](https://astro.build) v7 (static site generator), styled with Tailwind CSS v4 + hand-rolled CSS, deployed as a fully static site via Cloudflare Pages (inferred from CSP config).
 
 ---
 
@@ -12,16 +12,16 @@ Built with [Astro](https://astro.build) v6 (static site generator), styled with 
 
 | Layer | Technology | Version |
 |-------|-----------|---------|
-| Framework | [Astro](https://astro.build) | 6.3.3 |
-| CSS | Tailwind CSS | 4.3.0 |
+| Framework | [Astro](https://astro.build) | 7.0.7 |
+| CSS | Tailwind CSS | 4.3.2 |
 | Styling | Tailwind + vanilla CSS (reset, typography, layout) | — |
 | Icons | Font Awesome 6 (brands, solid via `/public/fa/`) | — |
 | Fonts | Google Fonts — Silkscreen (headings), Roboto (body) | — |
 | Language | TypeScript (strict) | 6.0.3 |
 | Package Manager | pnpm | — |
 | Node.js | 24.15.0 | — |
-| Linting | ESLint | 10.4.0 |
-| Formatting | Prettier | 3.8.3 |
+| Linting | ESLint | 10.7.0 |
+| Formatting | Prettier | 3.9.5 |
 
 ---
 
@@ -62,8 +62,11 @@ Built with [Astro](https://astro.build) v6 (static site generator), styled with 
 ├── tsconfig.json                    # TypeScript config (strict, path aliases @/ → ./src/)
 ├── package.json                     # Dependencies & scripts
 ├── pnpm-workspace.yaml              # pnpm workspace config
-├── .eslintrc.cjs                    # ESLint config (TS, prettier integration)
+├── eslint.config.mjs                # ESLint flat config (TS, Astro, prettier integration)
 ├── .prettierrc                      # Prettier config (4-space tabs, single quotes, 80 width)
+├── .prettierignore                  # Prettier ignore (only formats src/ and select config files)
+├── improvements.md                  # Prioritized improvement plan
+├── .opencode/                       # opencode agent config
 └── .env.example                     # Environment variable template (PUBLIC_GTM_ID)
 ```
 
@@ -84,7 +87,7 @@ Built with [Astro](https://astro.build) v6 (static site generator), styled with 
 - Dark theme (black background, white text) with CSS custom properties for the color palette (`--background`, `--accents-1` through `--accents-8`, `--text-primary`).
 
 ### Analytics (3 services)
-1. **Google Tag Manager** — `GA.astro` (inline script, GTM ID from `PUBLIC_GTM_ID` env var).
+1. **Google Tag Manager** — `GA.astro` (inline script, GTM ID currently hardcoded as `GTM-KP4SRMMP` despite `PUBLIC_GTM_ID` env var existing).
 2. **PostHog** — `Posthog.astro` (client-side init, runs only in production via `import.meta.env.PROD`).
 3. **Partytown** — Astro integration (`@astrojs/partytown`) for offloading GTM to a web worker.
 
@@ -130,13 +133,13 @@ Built with [Astro](https://astro.build) v6 (static site generator), styled with 
 ### Pages
 - **`index.astro`** — Hero: "Hello, I'm Mike!" + "Full-Stack Developer" tagline → social icons (LinkedIn, GitHub) → skill icons marquee.
 - **`projects/index.astro`** — Grid listing of all project cards from content collection.
-- **`projects/[id].astro`** — Individual project detail page rendering the Markdown content with `astro-portabletext`.
+- **`projects/[id].astro`** — Individual project detail page rendering the Markdown content via `{Content}` from `render()`.
 
 ### UI Components
 - **`Card.astro`** — Bordered card with subtle hover effect (background tint).
 - **`PostCard.astro`** — Project link card (title + arrow).
 - **`Marquees.astro`** — Infinite scrolling horizontal animation (CSS keyframes, 20s loop, gradient fade mask on edges). Triples the slot content for seamless loop.
-- **`Skills.astro`** — 15 tech skill icons as inline SVGs (TypeScript, Node.js, Tailwind, React, Next.js, Figma, Astro, JavaScript, Kotlin, Vue, Flutter, Svelte, Laravel, etc.).
+- **`Skills.astro`** — 12 tech skill icons as inline SVGs (TypeScript, JavaScript, Tailwind CSS, Figma, React, Next.js, Node.js, Astro, Vite, Kotlin, Laravel, Flutter).
 
 ### Analytics & Security Components
 - **`GA.astro`** — Google Tag Manager inline script.
@@ -171,29 +174,13 @@ Each file generates its own page at `/projects/<filename-without-ext>/`.
 
 ---
 
-## Git History Highlights
-
-```
-chore: bump dependencies
-Update csp headers
-Add projects link, background color fix
-Add Posthog
-Add marquees mask
-Add tailwind
-eslint & prettier basic configuration
-```
-
-The project evolved from a simple page → added Tailwind → marquee animations → PostHog analytics → GTM → content collections for projects → CSP hardening.
-
----
-
 ## Potential Improvements / Notes for Agents
 
 1. **Content is placeholder** — Both project Markdown files contain boilerplate "Hi there!" text. Needs real portfolio content.
 2. **No sitemap or RSS** — Consider adding `@astrojs/sitemap` for SEO.
 3. **No image optimization** — No `@astrojs/image` integration; project images in Markdown won't be optimized.
 4. **PostHog key is hardcoded** — `phc_dGluPpkr5dSplv8C74Qxpwx6wYyzeuDi5jGv4HWeVAo` is baked into `Posthog.astro`. Consider moving to env var.
-5. **GTM env var** is `PUBLIC_GTM_ID` but no `.env` file exists with a real value — only `.env.example`.
+5. **GTM env var** is `PUBLIC_GTM_ID` but GA.astro hardcodes `GTM-KP4SRMMP` — `.env` exists with a real value but is unused.
 6. **No Open Graph / social share tags** — BaseLayout could benefit from OG meta for social sharing.
 7. **`Card.astro` component has unused CSS** — defines `.card` class styles but PostCard.astro duplicates similar styles (could refactor into shared).
 8. **Marquee triple-render** — `Marquees.astro` renders `<slot />` 3× for seamless loop; if content is heavy this multiplies DOM size.
